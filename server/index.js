@@ -42,7 +42,7 @@ app.post("/create-pdf", (req, res) => {
 //GET --SEND PDF TO THE CLIENT
 
 app.get("/fetch-pdf", (req, res) => {
-  res.sendFile(`${__dirname}/result.pdf`);
+  res.sendFile(`/result.pdf`);
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
