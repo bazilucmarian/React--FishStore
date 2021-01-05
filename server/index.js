@@ -16,20 +16,20 @@ app.use(bodyParser.json());
 const port = process.env.PORT || 5000;
 
 // Priority serve any static files.
-app.use(express.static(path.resolve(__dirname, "../fish-inventory/build")));
+// app.use(express.static(path.resolve(__dirname, "../fish-inventory/build")));
 
-// Answer API requests.
-app.get("/api", function (req, res) {
-  res.set("Content-Type", "application/json");
-  res.send('{"message":"Hello from the custom server!"}');
-});
+// // Answer API requests.
+// app.get("/api", function (req, res) {
+//   res.set("Content-Type", "application/json");
+//   res.send('{"message":"Hello from the custom server!"}');
+// });
 
-// All remaining requests return the React app, so it can handle routing.
-app.get("*", function (request, response) {
-  response.sendFile(
-    path.resolve(__dirname, "../fish-inventory/build", "index.html")
-  );
-});
+// // All remaining requests return the React app, so it can handle routing.
+// app.get("*", function (request, response) {
+//   response.sendFile(
+//     path.resolve(__dirname, "../fish-inventory/build", "index.html")
+//   );
+// });
 
 //POST- PDF GENERATIONS AND FETCH DATA
 app.post("/create-pdf", (req, res) => {
