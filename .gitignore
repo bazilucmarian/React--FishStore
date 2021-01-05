@@ -9,7 +9,7 @@
 /coverage
 
 # production
-/build
+/fish-inventory/build
 
 # misc
 .DS_Store

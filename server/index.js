@@ -2,10 +2,13 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const pdf = require("html-pdf");
 const cors = require("cors");
+const path = require("path");
 const multer = require("multer");
 const upload = multer();
+const dotenv = require("dotenv");
 const pdfTemplate = require("./documents");
 
+dotenv.config();
 const app = express();
 
 app.use(upload.array());
@@ -15,21 +18,14 @@ app.use(bodyParser.json());
 
 const port = process.env.PORT || 5000;
 
-// Priority serve any static files.
-// app.use(express.static(path.resolve(__dirname, "../fish-inventory/build")));
-
-// // Answer API requests.
-// app.get("/api", function (req, res) {
-//   res.set("Content-Type", "application/json");
-//   res.send('{"message":"Hello from the custom server!"}');
-// });
-
-// // All remaining requests return the React app, so it can handle routing.
-// app.get("*", function (request, response) {
-//   response.sendFile(
-//     path.resolve(__dirname, "../fish-inventory/build", "index.html")
-//   );
-// });
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "/fish-inventory/build")));
+  app.get("*", (req, res) => {
+    res.sendFile(
+      path.resolve(__dirname, "fish-inventory", "build", "index.html")
+    );
+  });
+}
 
 //POST- PDF GENERATIONS AND FETCH DATA
 app.post("/create-pdf", (req, res) => {

@@ -8,6 +8,7 @@
     "server": "nodemon server/index",
     "client": "npm start --prefix fish-inventory",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix fish-inventory && npm run build --prefix fish-inventory",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
