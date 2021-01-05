@@ -1,1 +1,1 @@
-start: node server
+web: node server
