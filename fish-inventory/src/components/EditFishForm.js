@@ -1,17 +1,8 @@
 import React, { useContext } from "react";
-import {
-  TextField,
-  Grid,
-  FormControl,
-  Button,
-  MenuItem,
-  Select,
-} from "@material-ui/core";
+import { TextField, Grid, Button, MenuItem, Select } from "@material-ui/core";
 import { Context as FishStoreContext } from "../context/fishesContext";
 const EditFishForm = ({ fish, index }) => {
-  const { fishes, loading, updateFish, deleteFish } = useContext(
-    FishStoreContext
-  );
+  const { updateFish, deleteFish } = useContext(FishStoreContext);
 
   const handleChange = (e) => {
     e.preventDefault();

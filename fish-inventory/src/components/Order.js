@@ -3,7 +3,6 @@ import axios from "axios";
 import { saveAs } from "file-saver";
 import { formatPrice } from "../utils/formatPrice";
 import Fishing from "../img/fishing.svg";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
 
 import {
@@ -25,7 +24,7 @@ import { Context as ordersContext } from "../context/ordersContext";
 
 const Order = () => {
   const theme = useTheme();
-  const matchesXS = useMediaQuery(theme.breakpoints.up("xs"));
+  // const matchesXS = useMediaQuery(theme.breakpoints.up("xs"));
 
   const { state: fishes } = useContext(fishesContext);
   const { state: orderObj, deleteOrderItem } = useContext(ordersContext);

@@ -42,8 +42,6 @@ const useStyles = makeStyles((theme) => ({
 const Fish = ({ index, details: { name, image, desc, price, status } }) => {
   const { addToOrder } = useContext(ordersContext);
   const classes = useStyles();
-  const theme = useTheme();
-  const matchesXS = useMediaQuery((theme) => theme.breakpoints.up("xs"));
 
   const isAvailable = status === "available";
 

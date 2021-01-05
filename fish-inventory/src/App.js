@@ -12,9 +12,7 @@ import Order from "./components/Order";
 const useStyles = makeStyles((theme) => ({}));
 
 const App = () => {
-  const classes = useStyles();
   const { state: fishes } = useContext(FishStoreContext);
-  console.log(fishes);
 
   return (
     <ThemeProvider theme={theme}>
