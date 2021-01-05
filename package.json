@@ -8,13 +8,14 @@
     "server": "nodemon server/index",
     "client": "npm start --prefix fish-inventory",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix fish-inventory && npm run build --prefix fish-inventory",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix fish-inventory && npm run build --prefix fish-inventory",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "concurrently": "^5.3.0",
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.6",
+    "express": "^4.17.1"
   }
 }
